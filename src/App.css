@@ -1,0 +1,115 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  padding: 4rem var(--inline-padding);
+  padding-right: 0;
+  overflow: hidden;
+}
+.cost-report {
+  display: inline-flex;
+  margin-bottom: -0.5rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--primary-text);
+  border: 1px solid rgb(65, 188, 196);
+  border-radius: 32px;
+  background-color: rgb(237, 255, 255);
+  font-family: "Work Sans", sans-serif;
+}
+.cost-report span {
+  margin-left: 8px;
+  margin-bottom: -3px;
+  transition: transform 0.2s ease-in-out;
+}
+.cost-report:hover span {
+  transform: translateX(3px);
+}
+header section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: var(--inline-padding);
+}
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.btn-delimiter {
+  color: #94a1ad;
+}
+.partners {
+  margin-top: 5.5rem;
+  border: 1px solid #71879c33;
+  border-radius: 8px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+.partners p {
+  font-family: "Hanken Grotesk", sans-serif;
+  margin-bottom: 1rem;
+}
+.img-container {
+  position: relative;
+  margin-right: -2rem;
+}
+.img-container img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.top-ball {
+  position: absolute;
+  z-index: -1;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  animation: bounce 5s linear infinite;
+}
+.rolling-ball-container {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  animation: rollAlongBottomLeft 5s linear infinite;
+  transform-origin: center center;
+}
+.rolling-ball {
+  width: 100%;
+  object-fit: cover;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rollAlongBottomLeft {
+  0% {
+    transform: translateX(0) rotate(360deg);
+  }
+  50% {
+    transform: translateX(30px) rotate(270deg);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
+}
