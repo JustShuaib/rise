@@ -24,10 +24,12 @@ const Footer = () => {
             <input
               type="text"
               placeholder="First name"
+              required
               className="newsletter-first-name"
             />
             <input
               type="text"
+              required
               placeholder="Last name"
               className="newsletter-last-name"
             />
@@ -35,6 +37,7 @@ const Footer = () => {
           <div className="form-submission">
             <input
               type="email"
+              required
               placeholder="Email address"
               className="newsletter-email"
             />

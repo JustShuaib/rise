@@ -1,0 +1,33 @@
+.offerings-container{
+  margin-block: 5rem;
+  height: 400vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.portfolio-container {
+  border-radius: 24px;
+  padding: 2rem 1rem;
+  padding-right: 0;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+  position: sticky;
+}
+.portfolio-container button {
+  color: #171c22;
+  background: #71879c0d;
+}
+.stock-portfolio {
+  background: #edffff;
+  top: 5%;
+}
+.investment-portfolio {
+  background: #f5f1fe;
+  top: 10%;
+}
+.fixed-income{
+  background: #F6E4F0;
+
+}

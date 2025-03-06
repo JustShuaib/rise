@@ -1,27 +1,48 @@
 import {useState} from "react";
 import "./nav.css";
+import Logo from "../assets/icons/logo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <div className="nav-logo">
-        rise<sup>•</sup>
-      </div>
+      <Logo fill="#0898A0" />
+      <div className="nav-link-container">
+        <ul className="nav-links">
+          <li>
+            <a
+              href="https://www.risevest.com/why-rise"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Why rise
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.risevest.com/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.risevest.com/rise-for-business"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Rise for Business
+            </a>
+          </li>
+        </ul>
 
-      {/* Desktop Navigation Links */}
-      <div className="nav-links">
-        <a href="#">Why Rise</a>
-        <a href="#">Blog</a>
-        <a href="#">Rise for Business</a>
-      </div>
-
-      {/* Authentication Buttons */}
-      <div className="auth-buttons">
-        <button className="login-btn">Log In</button>
-        <button className="get-started-btn">Get started</button>
+        <div className="auth-buttons">
+          <button className="login-btn">Log In</button>
+          <button className="get-started-btn btn btn-primary">Get started</button>
+        </div>
       </div>
 
       {/* Hamburger Icon */}

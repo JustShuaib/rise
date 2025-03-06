@@ -5,16 +5,17 @@ import RightArrow from "./assets/icons/rightArrow";
 import MeetRisers from "./components/meetRisers";
 import StartInvesting from "./components/startInvesting";
 import Header, {BtnGroup} from "./components/header";
+import Offerings from "./components/offerings";
 
 const App = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <main className="container">
         <Header />
         <MeetRisers />
         <StartInvesting />
-        <section className="numbers-container">
+        <section>
           <h2 className="center-heading">
             See our <span className="heading-span">numbers</span>
           </h2>
@@ -40,6 +41,7 @@ const App = () => {
             </li>
           </ul>
         </section>
+        <Offerings />
         <div className="flex-container">
           <img src="./assets/rise-wallet.png" alt="" />
           <div className="container">
@@ -144,7 +146,7 @@ const App = () => {
             <img src="./assets/ball.webp" alt="" width={240} className="ball" />
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );
