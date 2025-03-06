@@ -1,5 +1,4 @@
-
-const RightArrow = () => {
+const RightArrow = ({fill}: {fill?: string}) => {
   return (
     <svg
       width="17"
@@ -10,10 +9,10 @@ const RightArrow = () => {
     >
       <path
         d="M9.79813 0.30204C9.91373 3.45101 13.8783 6.01557 16.7936 7.5308L16.7931 8.93036C13.8769 10.2142 10.0273 12.6647 10.0263 15.6971L7.92699 15.6978C7.81147 12.3156 11.3111 9.98183 13.7606 9.16462L0.698153 8.93565L0.698844 6.83631L13.7613 7.06528C11.1957 6.36634 7.58105 3.68504 7.69879 0.30273L9.79813 0.30204Z"
-        fill="white"
+        fill={fill || "white"}
       />
     </svg>
   );
-}
+};
 
-export default RightArrow
+export default RightArrow;

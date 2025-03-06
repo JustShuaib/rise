@@ -1,70 +1,170 @@
 import Footer from "./components/footer";
 import Navbar from "./components/nav";
 import "./App.css";
-import GreaterThan from "./assets/icons/greaterThan";
 import RightArrow from "./assets/icons/rightArrow";
-import GooglePlay from "./assets/icons/googlePlay";
-import AppStore from "./assets/icons/appStore";
+import MeetRisers from "./components/meetRisers";
+import StartInvesting from "./components/startInvesting";
+import Header, {BtnGroup} from "./components/header";
 
 const App = () => {
   return (
     <>
       <Navbar />
-      <header>
-        <section>
-          <a
-            href="http://www.risevest.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cost-report"
-          >
-            Read our cost of living report 2024
-            <span>
-              <GreaterThan />
-            </span>
-          </a>
-          <h1>
-            Dollar investments that help you{" "}
-            <span className="heading-span">grow.</span>
-          </h1>
-          <p>
-            Rise gives you access to a carefully selected portfolio of global
-            investments, across US stocks, US real estate and fixed income
-            assets.
-          </p>
-          <div className="header-cta">
+      <div className="container">
+        <Header />
+        <MeetRisers />
+        <StartInvesting />
+        <section className="numbers-container">
+          <h2 className="center-heading">
+            See our <span className="heading-span">numbers</span>
+          </h2>
+          <ul className="numbers-row">
+            <li>
+              <span className="content">600k +</span>
+              <span className="desc">Users</span>
+            </li>
+            <li>
+              <span className="content">$42m +</span>
+              <span className="desc">Paid out to users</span>
+            </li>
+            <li>
+              <span className="content content-with-img">
+                5
+                <img
+                  src="./assets/countries.webp"
+                  alt="countries risevest operate in"
+                  loading="lazy"
+                />
+              </span>
+              <span className="desc">Countries</span>
+            </li>
+          </ul>
+        </section>
+        <div className="flex-container">
+          <img src="./assets/rise-wallet.png" alt="" />
+          <div className="container">
+            <h2>
+              Make transactions online with{" "}
+              <span className="heading-span">ease</span>
+            </h2>
+            <p>
+              With the Rise US virtual card, you can pay for your subscriptions,
+              shop online and enjoy a monthly transaction limit of up to
+              $10,000.
+            </p>
+            <button className="btn-light">
+              Request for your US virtual card
+              <span>
+                <RightArrow fill="#0898A0" />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div className="expert-container">
+          <h2>
+            Meet the <br />
+            <span className="heading-span">Experts</span>
+          </h2>
+          <ul className="expert-content">
+            <li className="expert-item">
+              <img src="./assets/eke.png" alt="Eke" />
+              <p>Eke Urum</p>
+              <span>Founder & CEO</span>
+            </li>
+            <li className="expert-item">
+              <img src="./assets/sheriff.png" alt="Sheriff" />
+              <p>Sheriff Adeoti</p>
+              <span>Finance Lead</span>
+            </li>
+            <li className="expert-item">
+              <img src="./assets/damilare.png" alt="Damilare" />
+              <p>Damilare Akinlotan</p>
+              <span>Finance</span>
+            </li>
+          </ul>
+        </div>
+        <div className="blog-container flex-container">
+          <section className="blog-content">
+            <h3>
+              Get smarter about <br /> your money.
+            </h3>
+            <p>
+              The latest news, market insight and everything you need to know
+              about managing your money.
+            </p>
             <button className="btn-primary">
-              Start investing
+              Read the blog
               <span>
                 <RightArrow />
               </span>
             </button>
-            <button className="btn-secondary cta-btn">
-              <AppStore /> <span className="btn-delimiter">|</span>
-              <GooglePlay />
-              Download app
-            </button>
-          </div>
-          <div className="partners">
-            <p>Investors and Partners</p>
-            <img src="./assets/partners.webp" alt="partners" />
-          </div>
-        </section>
-        <div className="img-container">
-          <img src="./assets/ball.webp" alt="Ball" className="top-ball" />
-          <img src="./assets/phone.webp" alt="Phone" />
-          <span className="rolling-ball-container">
-            <img
-              src="./assets/ball.webp"
-              alt="Rolling ball"
-              className="rolling-ball"
-            />
-          </span>
+          </section>
+          <div className="divider"></div>
+          <ul className="blog-content">
+            {stories.map((story, index) => (
+              <li key={index}>
+                <a
+                  href="https://www.risevest.com/blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="blog-item"
+                >
+                  <img src={story.img} alt={story.title} />
+                  <p className="blog-text">
+                    <span className="blog-title">{story.title}</span>
+                    <span className="blog-desc">{story.desc}</span>
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </header>
+        <div className="community-container">
+          <p className="community-title">Join the Rise Community</p>
+          <p className="community-desc">
+            Our Telegram community surrounds you with others who can help you
+            along your financial journey with tips, advice and learning. It's
+            completely free and open to new and seasoned investors.
+          </p>
+          <button className="btn-outline">
+            Join our community
+            <span>
+              <RightArrow fill="#FFFFFF" />
+            </span>
+          </button>
+        </div>
+        <div className="download-container">
+          <div className="download-text-container">
+            <p className="download-copy">Download The Rise App</p>
+            <p className="download-title">Rise makes investing simple.</p>
+            <BtnGroup />
+          </div>
+          <div className="download-img-container">
+            <img src="./assets/download-app.png" alt="" />
+            <img src="./assets/ball.webp" alt="" width={240} className="ball" />
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
 };
 
 export default App;
+const stories = [
+  {
+    img: "./assets/may-report.png",
+    title: "May Portfolio Report",
+    desc: "Rise has added YouTube to it’s stocks portfolio growth",
+  },
+  {
+    img: "./assets/user-stories.png",
+    title: "User stories",
+    desc: "Rise has added YouTube to it’s stocks portfolio growth",
+  },
+  {
+    img: "./assets/updates.png",
+    title: "Updates",
+    desc: "Rise has added YouTube to it’s stocks portfolio growth",
+  },
+];

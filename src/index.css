@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --primary-dark-text: #1c232b;
   --primary-text: #0898a0;
-  --inline-padding: 2rem;
+  --dark-text: #171c22;
+  --inline-padding: 4rem;
   --block-padding: 1.5rem;
+  --heading-font: "Hanken Grotesk", sans-serif;
+  --body-font: "DM Sans", sans-serif;
 }
 * {
   padding: 0;
@@ -17,25 +20,23 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Hanken Grotesk", sans-serif;
+  font-family: var(--heading-font);
   font-optical-sizing: auto;
   font-style: normal;
+  color: var(--primary-dark-text);
+  font-weight: 600;
 }
 h1 {
   font-size: 3.75rem;
-  font-weight: 600;
-  color: var(--primary-dark-text);
   line-height: 4.6875rem;
 }
-.heading-span {
+h2,h3 {
   font-size: 3rem;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--primary-text);
+  line-height: 3.7rem;
 }
 p {
   color: #5e7387;
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--body-font);
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 1.25rem;
@@ -47,15 +48,38 @@ button {
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  font-family: "Hanken Grotesk", sans-serif;
+  font-family: var(--heading-font);
   font-weight: 500;
   font-size: 1rem;
   border: none;
+  width: fit-content;
+}
+button:hover span {
+  transform: translateX(5px);
+}
+.container{
+  padding-inline: var(--inline-padding);
+}
+.heading-span {
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--primary-text);
+}
+.center-heading {
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
 }
 .btn-primary {
   background-color: var(--primary-text);
   color: white;
   border: none;
+  width: fit-content;
 }
 .btn-primary span {
   display: inline-block;
@@ -63,11 +87,70 @@ button {
   margin-bottom: -5px;
   transition: transform 0.2s ease-in-out;
 }
-.btn-primary:hover span {
-  transform: translateX(5px);
-}
 .btn-secondary {
-  color:var(--primary-dark-text);
-  background-color: #71879C0D;
+  color: var(--primary-dark-text);
+  background-color: #71879c0d;
   border: none;
+}
+.btn-light {
+  color: var(--primary-text);
+  font-family: "Inter", sans-serif;
+}
+.btn-light span {
+  margin-left: 0.5rem;
+  margin-bottom: -5px;
+  transition: transform 0.2s ease-in-out;
+}
+.btn-outline{
+  color: #fff;
+  border: 1px solid #FFF;
+  background: none;
+}
+.btn-outline span {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-bottom: -5px;
+  transition: transform 0.2s ease-in-out;
+}
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed inside modal itself, but not the body */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none; /* Initially hidden */
+}
+
+.modal.visible {
+  display: block; /* Make modal visible when 'visible' class is added */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
