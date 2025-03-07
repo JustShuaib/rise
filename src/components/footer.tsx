@@ -208,7 +208,7 @@ const Footer = () => {
         <div className="footer-cta">
           <button className="download-btn">
             <AppStore fill="#fff" /> <span>|</span>
-            <GooglePlay fill="#fff" />
+            <GooglePlay fill="#fff" stroke="#1C232B" />
             Download app
           </button>
           <button className="btn-outline">

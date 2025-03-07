@@ -27,7 +27,19 @@ const Header = () => {
           global investments, across US stocks, US real estate and <br /> fixed
           income assets.
         </p>
-        <BtnGroup />
+        <div className="header-cta">
+          <button className="btn-primary">
+            Start investing
+            <span>
+              <RightArrow />
+            </span>
+          </button>
+          <button className="btn-secondary cta-btn">
+            <AppStore /> <span className="btn-delimiter">|</span>
+            <GooglePlay />
+            Download app
+          </button>
+        </div>
         <div className="partners">
           <p>Investors and Partners</p>
           <img src="./assets/partners.webp" alt="partners" />
@@ -49,20 +61,3 @@ const Header = () => {
 };
 
 export default Header;
-const BtnGroup = () => (
-  <div className="header-cta">
-    <button className="btn-primary">
-      Start investing
-      <span>
-        <RightArrow />
-      </span>
-    </button>
-    <button className="btn-secondary cta-btn">
-      <AppStore /> <span className="btn-delimiter">|</span>
-      <GooglePlay />
-      Download app
-    </button>
-  </div>
-);
-
-export {BtnGroup};

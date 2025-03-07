@@ -9,6 +9,13 @@
   --heading-font: "Hanken Grotesk", sans-serif;
   --body-font: "DM Sans", sans-serif;
 }
+@media (max-width: 768px) {
+  :root {
+    --inline-padding: 0rem;
+    --padding-sm: 2rem;
+    --block-padding: 1.5rem;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -30,10 +37,23 @@ h1 {
   font-size: 3.75rem;
   line-height: 4.6875rem;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.3rem;
+    line-height: 2.3rem;
+  }
+}
 h2,
 h3 {
   font-size: 3rem;
   line-height: 3.7rem;
+}
+@media (max-width: 768px) {
+  h2,
+  h3 {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
 }
 p {
   color: #5e7387;
@@ -41,6 +61,11 @@ p {
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 1.25rem;
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
 }
 button {
   border-radius: 50px;
@@ -55,6 +80,13 @@ button {
   border: none;
   width: fit-content;
 }
+@media (max-width: 768px) {
+  button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.875rem;
+    width: fit-content;
+  }
+}
 button:hover span {
   transform: translateX(5px);
 }
@@ -66,6 +98,11 @@ button:hover span {
   font-weight: 500;
   font-style: italic;
   color: var(--primary-text);
+}
+@media (max-width: 768px) {
+  .heading-span {
+    font-size: 2rem;
+  }
 }
 .center-heading {
   text-align: center;

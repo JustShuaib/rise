@@ -4,7 +4,7 @@ const Offerings = () => {
   return (
     <div className="offerings-container">
       <div className="portfolio-container stock-portfolio">
-        <div className="container">
+        <div className="container portfolio-content">
           <h2>We bring the world’s best companies to you. </h2>
           <p>
             The Rise stock portfolio is a selection of stocks of the world’s
@@ -18,13 +18,13 @@ const Offerings = () => {
             </span>
           </button>
         </div>
-        <div>
+        <div className="portfolio-img">
           <img src="./assets/stock-portfolio.png" alt="" />
         </div>
       </div>
 
       <div className="portfolio-container investment-portfolio">
-        <div className="container">
+        <div className="container portfolio-content">
           <h2>We offer diverse investment options. </h2>
           <p>
             Our real estate offering is a portfolio of rental properties in the
@@ -39,13 +39,13 @@ const Offerings = () => {
             </span>
           </button>
         </div>
-        <div>
+        <div className="portfolio-img">
           <img src="./assets/investment-portfolio.png" alt="" />
         </div>
       </div>
 
       <div className="portfolio-container fixed-income">
-        <div className="container">
+        <div className="container portfolio-content">
           <h2>There’s something for everyone.</h2>
           <p>
             Looking for stable and safe returns? Our fixed-income portfolio
@@ -59,7 +59,7 @@ const Offerings = () => {
             </span>
           </button>
         </div>
-        <div>
+        <div className="portfolio-img">
           <img src="./assets/fixed-income.png" alt="" />
         </div>
       </div>

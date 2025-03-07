@@ -1,6 +1,6 @@
-.offerings-container{
+.offerings-container {
   margin-block: 5rem;
-  height: 400vh;
+  height: 300vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,6 +15,26 @@
   gap: 2rem;
   position: sticky;
 }
+@media (max-width: 768px) {
+  .offerings-container {
+    padding-inline: var(--padding-sm);
+    height: 230vh;
+    margin-block: 3rem;
+  }
+  .portfolio-container {
+    padding: 1.5rem 2rem;
+    grid-template-columns: 1fr;
+  }
+  .portfolio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .portfolio-img img {
+    width: 100%;
+  }
+}
 .portfolio-container button {
   color: #171c22;
   background: #71879c0d;
@@ -27,7 +47,6 @@
   background: #f5f1fe;
   top: 10%;
 }
-.fixed-income{
-  background: #F6E4F0;
-
+.fixed-income {
+  background: #f6e4f0;
 }

@@ -6,6 +6,13 @@ header {
   margin-right: -4rem;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+    margin-right: 0;
+  }
+}
 .cost-report {
   display: inline-flex;
   margin-bottom: -0.5rem;
@@ -22,6 +29,11 @@ header {
   background-color: rgb(237, 255, 255);
   font-family: "Work Sans", sans-serif;
 }
+@media (max-width: 768px) {
+  .cost-report {
+    display: none;
+  }
+}
 .cost-report span {
   margin-left: 8px;
   margin-bottom: -3px;
@@ -35,10 +47,20 @@ header section {
   flex-direction: column;
   gap: 1.5rem;
 }
+@media (max-width: 768px) {
+  header section {
+  padding-inline: var(--padding-sm);
+  }
+}
 .header-cta {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .header-cta {
+    gap: 0.5rem;
+  }
 }
 .cta-btn {
   display: flex;
@@ -60,9 +82,23 @@ header section {
   font-family: var(--heading-font);
   margin-bottom: 1rem;
 }
+@media (max-width: 768px) {
+  .partners {
+    margin-top: 2rem;
+  }
+  .partners img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 .img-container {
   position: relative;
   margin-right: -2rem;
+}
+@media (max-width: 768px) {
+  .img-container img {
+    object-fit: contain;
+  }
 }
 .img-container img {
   max-width: 100%;
@@ -76,6 +112,13 @@ header section {
   height: 200px;
   animation: bounce 10s linear infinite;
 }
+@media (max-width: 768px) {
+  .top-ball {
+    left: 10px;
+    width: 100px;
+    height: 100px;
+  }
+}
 .rolling-ball-container {
   position: absolute;
   width: 380px;
@@ -85,6 +128,12 @@ header section {
   bottom: 0;
   animation: rollAlongBottomLeft 10s linear infinite;
   transform-origin: center center;
+}
+@media (max-width: 768px) {
+  .rolling-ball-container {
+    width: 190px;
+    height: 190px;
+  }
 }
 .rolling-ball {
   width: 100%;

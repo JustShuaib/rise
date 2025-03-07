@@ -6,6 +6,14 @@ nav {
   font-family: var(--heading-font);
   font-weight: 500;
 }
+@media (max-width: 768px) {
+  nav {
+    padding-inline: var(--padding-sm);
+  }
+  .logo{
+    z-index: 2;
+  }
+}
 .nav-link-container {
   display: flex;
   align-items: center;
@@ -52,13 +60,13 @@ nav {
 .get-started-btn:hover {
   transform: scale(1.02);
 }
-
-.hamburger {
+.hamburger-btn {
   display: none;
+  background: none;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 2;
 }
-
 .mobile-menu {
   display: none;
   position: absolute;
@@ -68,31 +76,47 @@ nav {
   height: 100vh;
   background: white;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1.5rem;
+  z-index: 1;
 }
-
-.mobile-menu a {
+.mobile-menu li{
+  list-style-type: none;
+}
+.link-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 8rem;
+  padding-inline: var(--padding-sm);
+}
+.link-list a {
   font-size: 1.5rem;
-  color: #333;
-}
-
-.mobile-menu .login-btn,
-.mobile-menu .get-started-btn {
-  width: 80%;
-  text-align: center;
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
+  .auth-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding-inline: var(--padding-sm);
+  }
+  .auth-list button {
+    padding: 1rem 3rem;
+    border-radius: 50px;
+  }
   .nav-links,
   .auth-buttons {
     display: none;
   }
-  .hamburger {
+  .hamburger-btn {
     display: block;
   }
   .mobile-menu.active {
-    display: flex;
+    display: block;
   }
 }

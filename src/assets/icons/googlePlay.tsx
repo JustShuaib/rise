@@ -1,4 +1,4 @@
-const GooglePlay = ({fill}: {fill?: string}) => {
+const GooglePlay = ({fill, stroke}: {fill?: string; stroke?: string}) => {
   return (
     <svg
       width="27"
@@ -10,13 +10,13 @@ const GooglePlay = ({fill}: {fill?: string}) => {
       <path
         d="M4.01428 3.8591C3.81416 4.08395 3.68953 4.43174 3.68953 4.89826V23.2369C3.68953 23.7019 3.81335 24.0489 4.0123 24.2738L14.4197 14.1307V14.0003L4.01428 3.8591Z"
         fill={fill || "#1C232B"}
-        stroke="white"
+        stroke={stroke || "white"}
         strokeWidth="0.212626"
       />
       <path
         d="M18.0877 10.6834L14.6856 14.0005V14.131L18.0851 17.4495L22.2416 15.1478L18.0877 10.6834ZM18.0877 10.6834L22.2417 12.9878L22.2419 12.988C22.8122 13.3026 23.0639 13.6991 23.0639 14.0662C23.0639 14.4335 22.8121 14.8311 22.2417 15.1477L18.0877 10.6834Z"
         fill={fill || "#1C232B"}
-        stroke="white"
+        stroke={stroke || "white"}
         strokeWidth="0.212626"
       />
       <mask id="path-4-inside-1_1_8537" fill="white">
@@ -34,7 +34,7 @@ const GooglePlay = ({fill}: {fill?: string}) => {
       <path
         d="M14.5527 13.8803L17.9242 10.593L5.65644 3.79628C5.65637 3.79625 5.6563 3.79621 5.65623 3.79617C5.01985 3.44813 4.49048 3.47103 4.14582 3.73671L14.5527 13.8803Z"
         fill={fill || "#1C232B"}
-        stroke="white"
+        stroke={stroke || "white"}
         strokeWidth="0.212626"
       />
     </svg>

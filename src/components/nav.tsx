@@ -1,13 +1,20 @@
 import {useState} from "react";
 import "./nav.css";
 import Logo from "../assets/icons/logo";
+import Hamburger from "../assets/icons/hamburger";
+import Close from "../assets/icons/close";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const handleOpenMenu = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = isOpen ? "unset" : "hidden";
+  };
   return (
     <nav className="navbar">
-      <Logo fill="#0898A0" />
+      <span className="logo">
+        <Logo fill="#0898A0" />
+      </span>
       <div className="nav-link-container">
         <ul className="nav-links">
           <li>
@@ -41,24 +48,39 @@ const Navigation = () => {
 
         <div className="auth-buttons">
           <button className="login-btn">Log In</button>
-          <button className="get-started-btn btn btn-primary">Get started</button>
+          <button className="get-started-btn btn btn-primary">
+            Get started
+          </button>
         </div>
       </div>
 
-      {/* Hamburger Icon */}
-      <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
+      <button className="hamburger-btn" onClick={handleOpenMenu}>
+        {isOpen ? <Close fill="#0898A0" /> : <Hamburger />}
+      </button>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
-        <a href="#">Why Rise</a>
-        <a href="#">Blog</a>
-        <a href="#">Rise for Business</a>
-        <button className="login-btn">Log In</button>
-        <button className="get-started-btn">Get started</button>
+        <ul className="link-list">
+          <li>
+            <a href="https://www.risevest.com/why-rise">Why Rise</a>
+          </li>
+          <li>
+            <a href="https://www.risevest.com/blog">Blog</a>
+          </li>
+          <li>
+            <a href="https://www.risevest.com/rise-for-business">
+              Rise for Business
+            </a>
+          </li>
+        </ul>
+        <ul className="auth-list">
+          <li>
+            <button className="login-btn">Log In</button>
+          </li>
+          <li>
+            <button className="get-started-btn btn-primary">Get started</button>
+          </li>
+        </ul>
       </div>
     </nav>
   );

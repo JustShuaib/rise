@@ -4,8 +4,10 @@ import "./App.css";
 import RightArrow from "./assets/icons/rightArrow";
 import MeetRisers from "./components/meetRisers";
 import StartInvesting from "./components/startInvesting";
-import Header, {BtnGroup} from "./components/header";
+import Header from "./components/header";
 import Offerings from "./components/offerings";
+import AppStore from "./assets/icons/appStore";
+import GooglePlay from "./assets/icons/googlePlay";
 
 const App = () => {
   return (
@@ -64,8 +66,7 @@ const App = () => {
         </div>
         <div className="expert-container">
           <h2>
-            Meet the <br />
-            <span className="heading-span">Experts</span>
+            Meet the <span className="heading-span">Experts</span>
           </h2>
           <ul className="expert-content">
             <li className="expert-item">
@@ -135,15 +136,29 @@ const App = () => {
             </span>
           </button>
         </div>
-        <div className="download-container">
-          <div className="download-text-container">
-            <p className="download-copy">Download The Rise App</p>
-            <p className="download-title">Rise makes investing simple.</p>
-            <BtnGroup />
-          </div>
-          <div className="download-img-container">
-            <img src="./assets/download-app.png" alt="" />
-            <img src="./assets/ball.webp" alt="" width={240} className="ball" />
+        <div className="padding-container">
+          <div className="download-container">
+            <div className="download-text-container">
+              <p className="download-copy">Download The Rise App</p>
+              <p className="download-title">Rise makes investing simple.</p>
+              <div className="header-cta btn-group">
+                <button className="btn-primary">
+                  Start investing
+                  <span>
+                    <RightArrow />
+                  </span>
+                </button>
+                <button className="btn-secondary cta-btn">
+                  <AppStore /> <span className="btn-delimiter">|</span>
+                  <GooglePlay />
+                  Download app
+                </button>
+              </div>
+            </div>
+            <div className="download-img-container">
+              <img src="./assets/download-app.png" alt="" />
+              <img src="./assets/ball.webp" alt="" className="ball" />
+            </div>
           </div>
         </div>
       </main>

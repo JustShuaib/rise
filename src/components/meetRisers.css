@@ -2,6 +2,11 @@
   margin-block: 5rem;
   position: relative;
 }
+@media (max-width: 768px) {
+  .meet-risers {
+    padding-inline: var(--padding-sm);
+  }
+}
 .risers-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

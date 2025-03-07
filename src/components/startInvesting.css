@@ -15,6 +15,27 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  .padding-container{
+    padding-inline: var(--padding-sm);
+  }
+  .investment-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 2rem var(--inline-padding);
+    margin-bottom: 4rem;
+  }
+  .investment-container {
+    padding-right: var(--inline-padding);
+  }
+  .investment-section{
+    padding-inline: var(--padding-sm);
+  }
+  .img-container{
+    padding-left: var(--padding-sm);
+  }
+}
 .slide-in {
   animation: slide-in 1s ease-out;
 }
