@@ -57,6 +57,18 @@
   border-radius: 20px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    margin-inline: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .close-modal-button {
   border-radius: 100%;
   width: 2rem;
@@ -78,4 +90,14 @@
   display: block;
   margin-inline: auto;
   z-index: 2;
+}
+@media (max-width: 768px) {
+  .close-modal-button{
+    top: 30px;
+    right: 28px;
+  }
+  .play-video {
+    border-radius: 0;
+    margin-inline: 0;
+  }
 }

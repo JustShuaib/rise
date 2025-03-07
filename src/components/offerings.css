@@ -1,6 +1,6 @@
 .offerings-container {
   margin-block: 5rem;
-  height: 300vh;
+  height: 400vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,7 +18,7 @@
 @media (max-width: 768px) {
   .offerings-container {
     padding-inline: var(--padding-sm);
-    height: 230vh;
+    height: 350vh;
     margin-block: 3rem;
   }
   .portfolio-container {
@@ -49,4 +49,9 @@
 }
 .fixed-income {
   background: #f6e4f0;
+  top: 15%;
+}
+.goal-based {
+  background: #fef3ef;
+  top: -5%;
 }

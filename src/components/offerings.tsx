@@ -63,6 +63,26 @@ const Offerings = () => {
           <img src="./assets/fixed-income.png" alt="" />
         </div>
       </div>
+
+      <div className="portfolio-container goal-based">
+        <div className="container portfolio-content">
+          <h2>Invest toward your goals.</h2>
+          <p>
+            Rise gives you the ability to choose a financial goal, whether
+            tuition, a wedding, travel or retirement and put money away
+            regularly toward them.
+          </p>
+          <button className="btn-light">
+            Explore our goal based plans
+            <span>
+              <RightArrow fill="#171C22" />
+            </span>
+          </button>
+        </div>
+        <div className="portfolio-img">
+          <img src="./assets/goal-based.png" alt="" />
+        </div>
+      </div>
     </div>
   );
 };
