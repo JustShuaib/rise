@@ -2,6 +2,7 @@ import {useState} from "react";
 import Close from "../assets/icons/close";
 import Play from "../assets/icons/play";
 import "./meetRisers.css";
+import RightArrow from "../assets/icons/rightArrow";
 
 const risers = [
   {
@@ -41,36 +42,76 @@ const MeetRisers = () => {
     document.querySelector(".modal")!.classList.remove("modal-visible");
     setVideoUrl(null);
   };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? risers.length - 1 : prev - 1));
+  };
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === risers.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section className="meet-risers">
       <h2>
         Meet Some <span className="heading-span">Rise Users</span>
       </h2>
-      <div className="risers-container">
-        {risers.map((riser, index) => (
-          <div
-            key={index}
-            style={{backgroundImage: `url(${riser.thumbnail})`}}
-            className="riser-card"
-          >
-            <img
-              src={riser.ball}
-              className="teal-ball"
-              style={{position: "absolute", ...riser.ballPosition}}
-              alt=""
-            />
-            <button
-              className="play-button"
-              onClick={() => handleModal(riser.video)}
+      <div className="carousel-container">
+        <div className="risers-container">
+          {risers.map((riser, index) => (
+            <div
+              key={index}
+              style={{
+                backgroundImage: `url(${riser.thumbnail})`,
+                transform: `translateX(-${currentIndex * 100}%)`,
+              }}
+              className="riser-card"
             >
-              <span className="play-button-icon">
-                <Play />
-              </span>
-            </button>
-            <p className="riser-name">{riser.name}</p>
+              <img
+                src={riser.ball}
+                style={{position: "absolute", ...riser.ballPosition}}
+                alt=""
+              />
+              <button
+                className="play-button"
+                onClick={() => handleModal(riser.video)}
+              >
+                <span className="play-button-icon">
+                  <Play />
+                </span>
+              </button>
+              <p className="riser-name">{riser.name}</p>
+            </div>
+          ))}
+        </div>
+        <div className="control-container">
+          <div className="dots">
+            {risers.map((_, index) => (
+              <button aria-label="Go to slide"
+                key={index}
+                className={`dot ${index === currentIndex ? "active" : ""}`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
           </div>
-        ))}
+          <div className="btn-container">
+            <button
+              aria-label="Previous slide"
+              className="arrow-left"
+              onClick={goToPrev}
+            >
+              <RightArrow fill="#212727" />
+            </button>
+            <button
+              aria-label="Next slide"
+              onClick={goToNext}
+            >
+              <RightArrow fill="#212727" />
+            </button>
+          </div>
+        </div>
       </div>
+
       <div className="modal">
         <div className="modal-content">
           <button onClick={handleCloseModal} className="close-modal-button">

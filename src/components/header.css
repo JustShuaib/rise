@@ -49,7 +49,7 @@ header section {
 }
 @media (max-width: 768px) {
   header section {
-  padding-inline: var(--padding-sm);
+    padding-inline: var(--padding-sm);
   }
 }
 .header-cta {
@@ -60,6 +60,10 @@ header section {
 @media (max-width: 768px) {
   .header-cta {
     gap: 0.5rem;
+    align-items: stretch;
+  }
+  .header-cta button {
+    font-size: 12px;
   }
 }
 .cta-btn {

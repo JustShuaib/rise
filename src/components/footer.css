@@ -37,7 +37,7 @@ footer {
     padding: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    top: -20%;
+    top: -18%;
     min-width: calc(100vw - 15rem);
   }
 }

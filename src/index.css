@@ -12,7 +12,7 @@
 @media (max-width: 768px) {
   :root {
     --inline-padding: 0rem;
-    --padding-sm: 2rem;
+    --padding-sm: 1.5rem;
     --block-padding: 1.5rem;
   }
 }
@@ -94,15 +94,9 @@ button:hover span {
   padding-inline: var(--inline-padding);
 }
 .heading-span {
-  font-size: 3rem;
   font-weight: 500;
   font-style: italic;
   color: var(--primary-text);
-}
-@media (max-width: 768px) {
-  .heading-span {
-    font-size: 2rem;
-  }
 }
 .center-heading {
   text-align: center;
